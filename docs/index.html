@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Coffee Ride with Voi in Edinburgh</title>
+    <title>Voi Coffee Edinburgh</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,8 @@
     </style>
   </head>
   <body>
-    <h1>Coffee Ride with Voi in Edinburgh</h1>
-    <p>Ride, coffee, ride, coffee, ride again, coffee, ride ride ride, coffee, go home.</p>
+    <h1>Voi Coffee Edinburgh</h1>
+    <p>Find a bike. Ride, coffee, ride, coffee, ride again, coffee, ride ride ride, coffee, go home. Wired!</p>
 
     <div id="map"></div>
 
@@ -51,9 +51,48 @@
           radius: 1000
       }).addTo(map);
 
-      var coffeeMarker1 = L.marker([55.953610, -3.197559]).addTo(map);
-      coffeeMarker1.bindPopup("<b>Wellington Coffee</b><br> Flat white heaven").openPopup();
-      
+      var loadCoffeeShops = function() {
+
+        fetch("./shop-data.json").then((response) => {
+            return response.json()
+        }).then(data => {
+            console.log(data);
+            data.forEach(function(shop) {
+              var coffeeMarker = L.marker([shop.lat, shop.lon]).addTo(map);
+              coffeeMarker.bindPopup("<b>" + shop.name + "</b><br> " + shop.description);
+            });
+        });
+
+        // var shopdata = [
+        //   {
+        //     name: "Wellington Coffee",
+        //     lat: 55.953610,
+        //     lon: -3.197559,
+        //     description: "Flat white heaven"
+        //   },
+        //   {
+        //     name: "Cairngorm Coffee",
+        //     lat: 55.951218,
+        //     lon: -3.210995,
+        //     description: "????"
+        //   },
+        //   {
+        //     name: "Lowdown",
+        //     lat: 55.95329,
+        //     lon: -3.198011,
+        //     description: "????"
+        //   }
+        // ];
+
+        // shopdata.forEach(function(shop) {
+        //   var coffeeMarker = L.marker([shop.lat, shop.lon]).addTo(map);
+        //   coffeeMarker.bindPopup("<b>" + shop.name + "</b><br> " + shop.description);
+        // });
+
+      };
+
+      loadCoffeeShops();
+
       /*var coffee1 = L.popup()
         .setLatLng([55.953610, -3.197559])
         .setContent("<b>Wellington Coffee</b><br> Flat white heaven")

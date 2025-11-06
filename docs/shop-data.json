@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Wellington Coffee",
+        "lat": 55.953610,
+        "lon": -3.197559,
+        "description": "Flat white heaven"
+    },
+    {
+        "name": "Cairngorm Coffee",
+        "lat": 55.951218,
+        "lon": -3.210995,
+        "description": "????"
+    },
+    {
+        "name": "Lowdown",
+        "lat": 55.95329,
+        "lon": -3.198011,
+        "description": "????"
+    }
+]
