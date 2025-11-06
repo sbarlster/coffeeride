@@ -28,5 +28,17 @@
         "lat": 55.94634,
         "lon": -3.201450,
         "description": "????"
+    },
+    {
+        "name": "Back Rabbit Coffee",
+        "lat": 55.94294,
+        "lon": -3.201813,
+        "description": "????"
+    },
+    {
+        "name": "Uplands Roast",
+        "lat": 55.942451,
+        "lon": -3.190101,
+        "description": "????"
     }
 ]
