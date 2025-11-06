@@ -16,5 +16,17 @@
         "lat": 55.95329,
         "lon": -3.198011,
         "description": "????"
+    },
+    {
+        "name": "Source Coffee Roasters",
+        "lat": 55.946043,
+        "lon": -3.203283,
+        "description": "????"
+    },
+    {
+        "name": "Hawker Coffee",
+        "lat": 55.94634,
+        "lon": -3.201450,
+        "description": "????"
     }
 ]
